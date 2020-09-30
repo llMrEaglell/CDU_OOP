@@ -6,13 +6,14 @@ namespace Lab_2
     public class MyMatrix
     {
         private double[,] matrix;
+
         public int Height
         {
             get => this.matrix.GetLength(0);
         }
 
         public int Width
-    {
+        {
             get => this.matrix.GetLength(1);
         }
 
@@ -70,18 +71,58 @@ namespace Lab_2
             set { this.matrix[x, y] = value; }
         }
 
-        public static MyMatrix operator * (MyMatrix matrix1, MyMatrix matrix2)
+        public static MyMatrix operator *(MyMatrix matrix1, MyMatrix matrix2)
         {
             // TODO Перевірка чи можливо перемножити
 
-            double[,] result = new double[matrix1.Height,matrix2.Width];
+            double[,] result = new double[matrix1.Height, matrix2.Width];
+
+            return new MyMatrix(result);
+        }
+
+        public static MyMatrix operator +(MyMatrix matrix1, MyMatrix matrix2)
+        {
+            // TODO Перевірка чи можливо додати
+            double[,] result = new double[matrix1.Height, matrix2.Width];
+            try
+            {
+                if (matrix1.Height != matrix2.Height && matrix1.Width != matrix2.Width)
+                {
+                    throw new Exception("Matrix1 Height or Width not equals Matrix2 Height or Width");
+                }
+
+                
+                for (int i = 0; i < matrix1.Height; i++)
+                {
+                    for (int j = 0; j < matrix2.Width; j++)
+                    {
+                        result[i, j] = matrix1[i, j] + matrix2[i, j];
+                    }
+                }
+                return new MyMatrix(result);
+            }
+            catch
+            {
+                Console.WriteLine("Matrix can't append");
+            }
 
             return new MyMatrix(result);
         }
 
         override public String ToString()
         {
-            return "";
+            String msg = "";
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    msg += this.matrix[i, j] + "\t";
+                }
+
+                msg += "\n";
+            }
+
+            return msg;
         }
     }
 }

@@ -13,16 +13,15 @@ namespace Lab_2
             double[,] arr = new double[m, n];
             for (int i = 0; i < m; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    arr[i, j] = i + j;
+                    arr[i, j] = i;
                 }
             }
             MyMatrix a = new MyMatrix(arr);
 
             Console.WriteLine(a.Height);
             Console.WriteLine(a.Width);
-
         }
     }
 }
