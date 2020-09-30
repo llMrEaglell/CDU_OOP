@@ -87,6 +87,10 @@ namespace Lab_2
             }
         }
 
+        public MyMatrix(String inputString):this(inputString.Split('\t'))
+        {
+        }
+
         public double this[int x, int y]
         {
             get { return matrix[x, y]; }

@@ -7,14 +7,7 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
-            String[] a =
-            {
-                "5 6 7",
-                "5 6 7",
-                "5 6 7",
-                "5 6 7 1"
-            };
-            Console.WriteLine(a.Length);
+            String a = "1 2 3 4\t4 5 6 7\t8 9 10 11\t12 13 14 15";
             MyMatrix matrix = new MyMatrix(a);
             
             Console.WriteLine(matrix);
