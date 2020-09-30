@@ -63,8 +63,30 @@ namespace Lab_2
             }
         }
 
-        // TODO Конструктор з масиву рядків
-        
+        public MyMatrix(String[] text)
+        {
+            int size = text[0].Split(' ').Length;
+            try
+            {
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (size != text[i].Split(' ').Length)
+                        throw new Exception("Matrix has a different number of elements");
+                }
+                matrix = new double[text.Length, size];
+                for (int i = 0; i < Height; i++)
+                {
+                    String[] numbers = text[i].Split(' ');
+                    for (int j = 0; j < Width; j++)
+                        this.matrix[i, j] = Convert.ToDouble(numbers[j]);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Matrix has a different number of elements");
+            }
+        }
+
         public double this[int x, int y]
         {
             get { return matrix[x, y]; }
@@ -86,7 +108,7 @@ namespace Lab_2
             double[,] result = new double[matrix1.Height, matrix2.Width];
             try
             {
-                if(matrix1.Width != matrix2.Height) throw new Exception("Matrix1 Width not equals Matrix2 Height");
+                if (matrix1.Width != matrix2.Height) throw new Exception("Matrix1 Width not equals Matrix2 Height");
 
                 for (int i = 0; i < matrix1.Height; i++)
                 {
@@ -95,10 +117,11 @@ namespace Lab_2
                         result[i, j] = 0;
                         for (int k = 0; k < matrix1.Width; k++)
                         {
-                            result[i, j] += matrix1[i, k] * matrix2[k,j];
+                            result[i, j] += matrix1[i, k] * matrix2[k, j];
                         }
                     }
                 }
+
                 return new MyMatrix(result);
             }
             catch
@@ -118,6 +141,7 @@ namespace Lab_2
                 {
                     throw new Exception("Matrix1 Height or Width not equals Matrix2 Height or Width");
                 }
+
                 for (int i = 0; i < matrix1.Height; i++)
                 {
                     for (int j = 0; j < matrix2.Width; j++)
@@ -125,6 +149,7 @@ namespace Lab_2
                         result[i, j] = matrix1[i, j] + matrix2[i, j];
                     }
                 }
+
                 return new MyMatrix(result);
             }
             catch
@@ -137,7 +162,7 @@ namespace Lab_2
 
         protected double[,] GetTransponedArray()
         {
-            double[,] result= new double[Width,Height];
+            double[,] result = new double[Width, Height];
 
             for (int i = 0; i < Width; i++)
             {
@@ -146,6 +171,7 @@ namespace Lab_2
                     result[i, j] = this.matrix[j, i];
                 }
             }
+
             return result;
         }
 
@@ -162,6 +188,7 @@ namespace Lab_2
         override public String ToString()
         {
             String msg = "";
+            if (this.matrix == null) return "Matrix is null";
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
