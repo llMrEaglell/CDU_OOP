@@ -17,12 +17,12 @@ namespace Lab_2
             get => this.matrix.GetLength(1);
         }
 
-        public int getHeight()
+        public int GetHeight()
         {
             return Height;
         }
 
-        public int getWidth()
+        public int GetWidth()
         {
             return Width;
         }
@@ -71,12 +71,12 @@ namespace Lab_2
             set { this.matrix[x, y] = value; }
         }
 
-        public double getElement(int i, int j)
+        public double GetElement(int i, int j)
         {
             return this.matrix[i, j];
         }
 
-        public void setElement(int i, int j, double num)
+        public void SetElement(int i, int j, double num)
         {
             this.matrix[i, j] = num;
         }
@@ -135,7 +135,7 @@ namespace Lab_2
             return new MyMatrix(result);
         }
 
-        protected double[,] getTransponedArray()
+        protected double[,] GetTransponedArray()
         {
             double[,] result= new double[Width,Height];
 
@@ -149,7 +149,15 @@ namespace Lab_2
             return result;
         }
 
+        public MyMatrix GetTransponedCopy()
+        {
+            return new MyMatrix(this.GetTransponedArray());
+        }
 
+        public void TransopnedMe()
+        {
+            this.matrix = GetTransponedArray();
+        }
 
         override public String ToString()
         {
