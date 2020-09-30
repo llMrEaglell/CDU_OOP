@@ -15,11 +15,6 @@ namespace Lab_2
             this.second = second;
         }
 
-        public static int TimeSinceMidnight(MyTime t)
-        {
-            return 0;
-        }
-
         public static MyTime TimeSinceMidnight(int t)
         {
             int secPerDay = 60 * 60 * 24;
