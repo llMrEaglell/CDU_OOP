@@ -71,6 +71,16 @@ namespace Lab_2
             set { this.matrix[x, y] = value; }
         }
 
+        public double getElement(int i, int j)
+        {
+            return this.matrix[i, j];
+        }
+
+        public void setElement(int i, int j, double num)
+        {
+            this.matrix[i, j] = num;
+        }
+
         public static MyMatrix operator *(MyMatrix matrix1, MyMatrix matrix2)
         {
             double[,] result = new double[matrix1.Height, matrix2.Width];
@@ -124,6 +134,22 @@ namespace Lab_2
 
             return new MyMatrix(result);
         }
+
+        protected double[,] getTransponedArray()
+        {
+            double[,] result= new double[Width,Height];
+
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    result[i, j] = this.matrix[j, i];
+                }
+            }
+            return result;
+        }
+
+
 
         override public String ToString()
         {
