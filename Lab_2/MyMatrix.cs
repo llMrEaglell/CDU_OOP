@@ -64,8 +64,8 @@ namespace Lab_2
         }
 
         // TODO Конструктор з масиву рядків
-
-        public double this[int x, int y] // Індексатор, для зверення як до масиву
+        
+        public double this[int x, int y]
         {
             get { return matrix[x, y]; }
             set { this.matrix[x, y] = value; }
