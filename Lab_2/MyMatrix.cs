@@ -73,16 +73,34 @@ namespace Lab_2
 
         public static MyMatrix operator *(MyMatrix matrix1, MyMatrix matrix2)
         {
-            // TODO Перевірка чи можливо перемножити
-
             double[,] result = new double[matrix1.Height, matrix2.Width];
+            try
+            {
+                if(matrix1.Width != matrix2.Height) throw new Exception("Matrix1 Width not equals Matrix2 Height");
+
+                for (int i = 0; i < matrix1.Height; i++)
+                {
+                    for (int j = 0; j < matrix2.Width; j++)
+                    {
+                        result[i, j] = 0;
+                        for (int k = 0; k < matrix1.Width; k++)
+                        {
+                            result[i, j] += matrix1[i, k] * matrix2[k,j];
+                        }
+                    }
+                }
+                return new MyMatrix(result);
+            }
+            catch
+            {
+                Console.WriteLine("Matrix can't multiply");
+            }
 
             return new MyMatrix(result);
         }
 
         public static MyMatrix operator +(MyMatrix matrix1, MyMatrix matrix2)
         {
-            // TODO Перевірка чи можливо додати
             double[,] result = new double[matrix1.Height, matrix2.Width];
             try
             {
@@ -90,8 +108,6 @@ namespace Lab_2
                 {
                     throw new Exception("Matrix1 Height or Width not equals Matrix2 Height or Width");
                 }
-
-                
                 for (int i = 0; i < matrix1.Height; i++)
                 {
                     for (int j = 0; j < matrix2.Width; j++)
