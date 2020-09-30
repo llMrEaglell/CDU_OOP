@@ -7,9 +7,10 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
-            MyTime a = new MyTime(4,5,20);
-            Console.WriteLine(MyTime.TimeSinceMidnight(3605));
-            
+            MyTime a = new MyTime(22,60,60);
+            Console.WriteLine(MyTime.TimeSinceMidnight(2262));
+            Console.WriteLine(MyTime.TimeSinceMidnight(a));
+            Console.WriteLine(MyTime.AddOneSecond(a));
         } 
     }
 }

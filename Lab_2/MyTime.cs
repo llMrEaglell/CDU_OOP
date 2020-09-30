@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace Lab_2
 {
@@ -15,6 +16,11 @@ namespace Lab_2
             this.second = second;
         }
 
+        public static int TimeSinceMidnight(MyTime t)
+        {
+            return t.hour * 3600 + t.minute * 60 + t.second;
+        }
+
         public static MyTime TimeSinceMidnight(int t)
         {
             int secPerDay = 60 * 60 * 24;
@@ -23,17 +29,70 @@ namespace Lab_2
             int m = (t / 60) % 60;
             int s = t % 60;
             return new MyTime(h, m, s);
-
         }
 
         public static MyTime AddOneSecond(MyTime t)
         {
-            return new MyTime(0, 0, 0);
+            if (t.hour == 23 && t.minute >= 59 && t.second >= 59)
+            {
+                t.hour = 0;
+                t.minute = 0;
+                t.second = 0;
+            }
+            else if (t.minute >= 59 && t.second >= 59)
+            {
+                t.hour += 1;
+                t.minute = 0;
+                t.second = 0;
+            }
+            else if (t.second >= 59)
+            {
+                t.minute += 1;
+                t.second = 0;
+            }
+            else if (t.second >= 59)
+            {
+                t.minute += 1;
+                t.second = 0;
+            }
+            else
+            {
+                t.second += 1;
+            }
+
+            return t;
         }
 
         public static MyTime AddOneMinute(MyTime t)
         {
-            return new MyTime(0, 0, 0);
+            if (t.hour == 23 && t.minute >= 59 && t.second >= 59)
+            {
+                t.hour = 0;
+                t.minute = 0;
+                t.second = 0;
+            }
+            else if (t.minute >= 59 && t.second >= 59)
+            {
+                t.hour += 1;
+                t.minute = 0;
+                t.second = 0;
+            }
+            else if (t.second >= 59)
+            {
+                t.minute += 1;
+                t.second = 0;
+            }
+            else if (t.second >= 59)
+            {
+                t.minute += 1;
+                t.second = 0;
+            }
+            else
+            {
+                t.second += 1;
+            }
+
+            return t;
         }
 
         public static MyTime AddOneHour(MyTime t)
