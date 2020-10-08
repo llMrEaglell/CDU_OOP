@@ -9,10 +9,16 @@ namespace Lab_1
         protected double _opposite;
         protected double _adjacent;
 
+        public TTriangle()
+        {
+            this.hypotenuse = 3;
+            this.opposite = 4;
+            this.adjacent = 5;
+        }
+
         public TTriangle(double hypotenuse, double opposite, double adjacent)
         {
-            if (opposite + adjacent > hypotenuse && adjacent + hypotenuse > opposite &&
-                hypotenuse + opposite > adjacent && opposite > 0 && adjacent > 0 && hypotenuse > 0)
+            if (check(hypotenuse, opposite, adjacent))
             {
                 this.hypotenuse = hypotenuse;
                 this.opposite = opposite;
@@ -26,8 +32,7 @@ namespace Lab_1
             get { return _hypotenuse; }
             set
             {
-                if ((opposite + adjacent > value && adjacent + value > opposite && value + opposite > adjacent &&
-                     opposite > 0 && adjacent > 0 && value > 0) || hypotenuse == 0 || opposite == 0 ||
+                if (check(hypotenuse, opposite, adjacent) || hypotenuse == 0 || opposite == 0 ||
                     adjacent == 0) _hypotenuse = value;
                 else throw new Exception("Triangle does not exist ");
             }
@@ -38,8 +43,7 @@ namespace Lab_1
             get { return _opposite; }
             set
             {
-                if ((value + adjacent > hypotenuse && adjacent + hypotenuse > value && hypotenuse + value > adjacent &&
-                     value > 0 && adjacent > 0 && hypotenuse > 0) || hypotenuse == 0 || opposite == 0 ||
+                if (check(hypotenuse, opposite, adjacent) || hypotenuse == 0 || opposite == 0 ||
                     adjacent == 0) _opposite = value;
                 else throw new Exception("Triangle does not exist ");
             }
@@ -50,8 +54,7 @@ namespace Lab_1
             get { return _adjacent; }
             set
             {
-                if ((opposite + value > hypotenuse && value + hypotenuse > opposite && hypotenuse + opposite > value &&
-                     opposite > 0 && value > 0 && hypotenuse > 0) || hypotenuse == 0 || opposite == 0 ||
+                if (check(hypotenuse, opposite, adjacent) || hypotenuse == 0 || opposite == 0 ||
                     adjacent == 0) _adjacent = value;
                 else throw new Exception("Triangle does not exist ");
             }
@@ -73,5 +76,10 @@ namespace Lab_1
             return "Hypotenuse:" + hypotenuse + "\nOpposite:" + opposite + "\nAdjacent:" + adjacent + "\n";
         }
 
+        private bool check(double hypotenuse, double opposite, double adjacent)
+        {
+            return opposite + adjacent > hypotenuse && adjacent + hypotenuse > opposite &&
+                   hypotenuse + opposite > adjacent && opposite > 0 && adjacent > 0 && hypotenuse > 0;
+        }
     }
 }

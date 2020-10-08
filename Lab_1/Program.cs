@@ -11,12 +11,11 @@ namespace Lab_1
             {
                 TTriangle triangle = new TTriangle(10, 6, 8);
                 Console.WriteLine(triangle.ToString());
-                Console.WriteLine("Perimetr={0}",triangle.perimetr());
-                Console.WriteLine("Square={0}",triangle.square());
+                Console.WriteLine("Perimetr={0}", triangle.perimetr());
+                Console.WriteLine("Square={0}", triangle.square());
             }
             catch (NullReferenceException e)
             {
-
             }
             catch
             {
@@ -36,21 +35,22 @@ namespace Lab_1
 
             Random rand = new Random();
             int[][] toothedArray = new int[rows][];
-        generate:
+            bool generate = true;
             int count = 0;
-            for (int i = 0; i < rows; i++)
+            while (generate)
             {
-                toothedArray[i] = new int[rand.Next(a, b)];
-                count += toothedArray[i].Length;
-            }
+                count = 0;
+                for (int i = 0; i < rows; i++)
+                {
+                    toothedArray[i] = new int[rand.Next(a, b)];
+                    count += toothedArray[i].Length;
+                }
 
-            Console.WriteLine("Count element's:" + count);
-            if (!(Math.Sqrt(count) == Math.Truncate(Math.Sqrt(count))))
-            {
-                Console.WriteLine("The number of elements is not a square of a natural number\n" +
-                                  "Press SPACE to generate new array");
-                if (Console.ReadKey().Key == ConsoleKey.Spacebar)
-                    goto generate;
+                Console.WriteLine("Count element's:" + count);
+                if (Math.Sqrt(count) == Math.Truncate(Math.Sqrt(count)))
+                {
+                    generate = false;
+                }
             }
 
             foreach (var t in toothedArray)
@@ -74,7 +74,7 @@ namespace Lab_1
             }
 
             Array.Sort(simpleArray);
-            int size = (int)Math.Sqrt(count);
+            int size = (int) Math.Sqrt(count);
             int[,] quadArray = new int[size, size]; //квадратна
             counter = 0;
             for (int i = 0; i < size; i++)
