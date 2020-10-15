@@ -19,7 +19,7 @@ namespace Lab_3
 
         public TCylinder() : base()
         {
-            _height = 0;
+            Height = 1;
         }
 
         public TCylinder(double height)

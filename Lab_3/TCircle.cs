@@ -16,7 +16,7 @@ namespace Lab_3
             }
         }
 
-        public TCircle() => this.Radius = 0;
+        public TCircle() => this.Radius = 1;
         public TCircle(double radius) => this.Radius = radius;
         public TCircle(TCircle circle) => this.Radius = circle.Radius;
 
