@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
+
 
 namespace Lab_3
 {
     public class Point
     {
-        private int X
+        private int _x;
+        private int _y;
+
+        public int X
         {
-            get => X;
-            set => X = value;
+            get => _x;
+            set => _x = value;
         }
 
-        private int Y
+        public int Y
         {
-            get => Y;
-            set => Y = value;
+            get => _y;
+            set => _y = value;
         }
 
         public Point(int x, int y)

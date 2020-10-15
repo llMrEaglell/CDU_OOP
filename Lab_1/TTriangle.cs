@@ -60,14 +60,14 @@ namespace Lab_1
             }
         }
 
-        public double perimetr()
+        public double perimeter()
         {
             return hypotenuse + opposite + adjacent;
         }
 
         public double square()
         {
-            double perimetr_2 = perimetr() / 2;
+            double perimetr_2 = perimeter() / 2;
             return Sqrt(perimetr_2 * (perimetr_2 - opposite) * (perimetr_2 - adjacent) * (perimetr_2 - hypotenuse));
         }
 

@@ -11,7 +11,7 @@ namespace Lab_1
             {
                 TTriangle triangle = new TTriangle(10, 6, 8);
                 Console.WriteLine(triangle.ToString());
-                Console.WriteLine("Perimetr={0}", triangle.perimetr());
+                Console.WriteLine("Perimetr={0}", triangle.perimeter());
                 Console.WriteLine("Square={0}", triangle.square());
             }
             catch (NullReferenceException e)

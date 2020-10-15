@@ -20,15 +20,15 @@ namespace Lab_3
 
         public double GetLength() => 2 * Math.PI * Radius;
 
-        public double getSquare() => Math.PI * Math.Pow(Radius, 2);
+        public double GetSquare() => Math.PI * Math.Pow(Radius, 2);
 
-        public override string ToString() => string.Format("Radius:{0}", this.Radius);
+        public override string ToString() => $"Radius:{this.Radius}";
 
         public static TCircle operator +(TCircle circle1, TCircle circle2) =>
             new TCircle(circle1.Radius + circle2.Radius);
 
         public static TCircle operator -(TCircle circle1, TCircle circle2) =>
-            new TCircle(circle1.Radius - circle2.Radius);
+            new TCircle(Math.Abs(circle1.Radius - circle2.Radius));
 
         public static TCircle operator *(TCircle circle1, double number) =>
             new TCircle(circle1.Radius * number);
