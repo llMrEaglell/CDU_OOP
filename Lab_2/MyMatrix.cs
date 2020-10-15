@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace Lab_2
 {
     public class MyMatrix
     {
-        private double[,] matrix;
+        private double[,] _matrix;
 
         public int Height
         {
-            get => this.matrix.GetLength(0);
+            get => this._matrix.GetLength(0);
         }
 
         public int Width
         {
-            get => this.matrix.GetLength(1);
+            get => this._matrix.GetLength(1);
         }
 
         public int GetHeight()
@@ -29,12 +28,12 @@ namespace Lab_2
 
         public MyMatrix(MyMatrix inputMatrix)
         {
-            this.matrix = inputMatrix.matrix;
+            this._matrix = inputMatrix._matrix;
         }
 
         public MyMatrix(double[,] inputMatrix)
         {
-            this.matrix = inputMatrix;
+            this._matrix = inputMatrix;
         }
 
         public MyMatrix(double[][] inputDoubles)
@@ -48,12 +47,12 @@ namespace Lab_2
                 }
 
                 int size = inputDoubles.Length;
-                this.matrix = new double[size, size];
+                this._matrix = new double[size, size];
                 for (int i = 0; i < size; i++)
                 {
                     for (int j = 0; j < size; j++)
                     {
-                        this.matrix[i, j] = inputDoubles[i][j];
+                        this._matrix[i, j] = inputDoubles[i][j];
                     }
                 }
             }
@@ -73,12 +72,12 @@ namespace Lab_2
                     if (size != text[i].Split(' ').Length)
                         throw new Exception("Matrix has a different number of elements");
                 }
-                matrix = new double[text.Length, size];
+                _matrix = new double[text.Length, size];
                 for (int i = 0; i < Height; i++)
                 {
                     String[] numbers = text[i].Split(' ');
                     for (int j = 0; j < Width; j++)
-                        this.matrix[i, j] = Convert.ToDouble(numbers[j]);
+                        this._matrix[i, j] = Convert.ToDouble(numbers[j]);
                 }
             }
             catch
@@ -93,18 +92,18 @@ namespace Lab_2
 
         public double this[int x, int y]
         {
-            get { return matrix[x, y]; }
-            set { this.matrix[x, y] = value; }
+            get { return _matrix[x, y]; }
+            set { this._matrix[x, y] = value; }
         }
 
         public double GetElement(int i, int j)
         {
-            return this.matrix[i, j];
+            return this._matrix[i, j];
         }
 
         public void SetElement(int i, int j, double num)
         {
-            this.matrix[i, j] = num;
+            this._matrix[i, j] = num;
         }
 
         public static MyMatrix operator *(MyMatrix matrix1, MyMatrix matrix2)
@@ -172,7 +171,7 @@ namespace Lab_2
             {
                 for (int j = 0; j < Height; j++)
                 {
-                    result[i, j] = this.matrix[j, i];
+                    result[i, j] = this._matrix[j, i];
                 }
             }
 
@@ -186,18 +185,18 @@ namespace Lab_2
 
         public void TransopnedMe()
         {
-            this.matrix = GetTransponedArray();
+            this._matrix = GetTransponedArray();
         }
 
         override public String ToString()
         {
             String msg = "";
-            if (this.matrix == null) return "Matrix is null";
+            if (this._matrix == null) return "Matrix is null";
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    msg += this.matrix[i, j] + "\t";
+                    msg += this._matrix[i, j] + "\t";
                 }
 
                 msg += "\n";
