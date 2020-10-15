@@ -9,33 +9,33 @@ namespace Lab_3
         private Point pointB;
         private Point pointC;
 
-        public double a
+        public double A
         {
             get => pointA + pointB;
             set
             {
                 if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value));
-                a = value;
+                A = value;
             }
         }
 
-        public double b
+        public double B
         {
             get => pointB + pointC;
             set
             {
                 if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value));
-                b = value;
+                B = value;
             }
         }
 
-        public double c
+        public double C
         {
             get => pointC + pointA;
             set
             {
                 if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value));
-                c = value;
+                C = value;
             }
         }
 
@@ -46,16 +46,20 @@ namespace Lab_3
             this.pointC = pointC;
         }
 
-        public double perimeter()
+        public double Perimeter()
         {
-            return a + b + c;
+            return A + B + C;
         }
 
-        public double sqare()
+        public double Sqare()
         {
-            
-            double perimetr_2 = perimeter() / 2;
-            return Math.Round(Math.Sqrt(perimetr_2 * (perimetr_2 - a) * (perimetr_2 - b) * (perimetr_2 - c)),2);
+            var perimeter2 = Perimeter() / 2;
+            return Math.Round(Math.Sqrt(perimeter2 * (perimeter2 - A) * (perimeter2 - B) * (perimeter2 - C)),2);
+        }
+
+        public override string ToString()
+        {
+            return $"AB:{this.A}\nAC:{this.B}\nBC:{this.C}\nPerimeter:{Perimeter()}\nSquare:{Sqare()}";
         }
     }
 }
