@@ -4,13 +4,15 @@ namespace Lab_3
 {
     public class TCircle
     {
-        private double Radius
+        private double _radius;
+
+        public double Radius
         {
-            get => Radius;
+            get => _radius;
             set
             {
                 if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value));
-                else this.Radius = value;
+                else this._radius = value;
             }
         }
 
@@ -36,7 +38,10 @@ namespace Lab_3
         public static TCircle operator *(double number, TCircle circle1) =>
             new TCircle(circle1.Radius * number);
 
+        public double GetSector(double angle) => Math.PI * Math.Pow(this.Radius, 2) * (angle / 360);
 
+
+        // TODO Equals with other circle
         public override bool Equals(object? obj)
         {
             //TODO change
