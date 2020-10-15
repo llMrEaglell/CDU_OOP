@@ -6,10 +6,6 @@ namespace Lab_3
     {
         static void Main(string[] args)
         {
-            Triangle a = new Triangle(new Point(1, 2), new Point(34, 5), new Point(5, 6));
-            Console.WriteLine(a.ToString());
-            TCylinder b = new TCylinder(5, 10);
-            Console.WriteLine(b);
         }
     }
 }
