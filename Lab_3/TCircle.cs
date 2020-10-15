@@ -1,9 +1,8 @@
-﻿#nullable enable
-using System;
+﻿using System;
 
 namespace Lab_3
 {
-    public class TCircle : IComparable
+    public class TCircle
     {
         private double _radius;
 
@@ -27,18 +26,7 @@ namespace Lab_3
 
         public override string ToString() => $"Radius:{this.Radius}";
 
-        public int CompareTo(object? obj)
-        {
-            {
-                if (obj == null) return 1;
-
-                TCircle circle = obj as TCircle;
-                if (circle != null)
-                    return this.Radius.CompareTo(circle.Radius);
-                else
-                    throw new ArgumentException("Object is not a TCircle");
-            }
-        }
+        
 
         public static TCircle operator +(TCircle circle1, TCircle circle2) =>
             new TCircle(circle1.Radius + circle2.Radius);
