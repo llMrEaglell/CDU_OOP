@@ -25,8 +25,10 @@ namespace Lab_3
         public double GetSquare() => Math.PI * Math.Pow(Radius, 2);
 
         public override string ToString() => $"Radius:{this.Radius}";
-
-        
+        public static bool operator >(TCircle circle1, TCircle circle2) => circle1.Radius > circle2.Radius;
+        public static bool operator <(TCircle circle1, TCircle circle2) => circle1.Radius < circle2.Radius;
+        public static bool operator ==(TCircle circle1, TCircle circle2) => circle1.Radius == circle2.Radius;
+        public static bool operator !=(TCircle circle1, TCircle circle2) => circle1.Radius != circle2.Radius;
 
         public static TCircle operator +(TCircle circle1, TCircle circle2) =>
             new TCircle(circle1.Radius + circle2.Radius);
