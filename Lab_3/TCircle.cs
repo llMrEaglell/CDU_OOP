@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 
 namespace Lab_3
 {
@@ -25,6 +26,7 @@ namespace Lab_3
         public double GetSquare() => Math.PI * Math.Pow(Radius, 2);
 
         public override string ToString() => $"Radius:{this.Radius}";
+
         public int CompareTo(object? obj)
         {
             {
@@ -53,17 +55,16 @@ namespace Lab_3
         public double GetSector(double angle) => Math.PI * Math.Pow(this.Radius, 2) * (angle / 360);
 
 
-        // TODO Equals with other circle
         public override bool Equals(object? obj)
         {
-            //TODO change
-            return base.Equals(obj);
+            if ((obj == null) || this.GetType() != obj.GetType()) return false;
+            TCircle temp = (TCircle) obj;
+            return Radius == temp.Radius;
         }
 
         public override int GetHashCode()
         {
-            //TODO change
-            return base.GetHashCode();
+            return Radius.GetHashCode();
         }
     }
 }
