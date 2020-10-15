@@ -6,7 +6,8 @@ namespace Lab_3
     {
         static void Main(string[] args)
         {
-            
+            TCircle circle = new TCircle(15);
+
         }
     }
 }
