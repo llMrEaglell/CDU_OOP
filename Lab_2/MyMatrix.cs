@@ -86,7 +86,7 @@ namespace Lab_2
             }
         }
 
-        public MyMatrix(String inputString):this(inputString.Split('\t'))
+        public MyMatrix(String inputString) : this(inputString.Split('\t'))
         {
         }
 
@@ -118,10 +118,7 @@ namespace Lab_2
                     for (int j = 0; j < matrix2.Width; j++)
                     {
                         result[i, j] = 0;
-                        for (int k = 0; k < matrix1.Width; k++)
-                        {
-                            result[i, j] += matrix1[i, k] * matrix2[k, j];
-                        }
+                        for (int k = 0; k < matrix1.Width; k++) result[i, j] += matrix1[i, k] * matrix2[k, j];
                     }
                 }
 
@@ -141,16 +138,11 @@ namespace Lab_2
             try
             {
                 if (matrix1.Height != matrix2.Height && matrix1.Width != matrix2.Width)
-                {
                     throw new Exception("Matrix1 Height or Width not equals Matrix2 Height or Width");
-                }
 
                 for (int i = 0; i < matrix1.Height; i++)
                 {
-                    for (int j = 0; j < matrix2.Width; j++)
-                    {
-                        result[i, j] = matrix1[i, j] + matrix2[i, j];
-                    }
+                    for (int j = 0; j < matrix2.Width; j++) result[i, j] = matrix1[i, j] + matrix2[i, j];
                 }
 
                 return new MyMatrix(result);
@@ -169,24 +161,15 @@ namespace Lab_2
 
             for (int i = 0; i < Width; i++)
             {
-                for (int j = 0; j < Height; j++)
-                {
-                    result[i, j] = this._matrix[j, i];
-                }
+                for (int j = 0; j < Height; j++) result[i, j] = this._matrix[j, i];
             }
 
             return result;
         }
 
-        public MyMatrix GetTransponedCopy()
-        {
-            return new MyMatrix(this.GetTransponedArray());
-        }
+        public MyMatrix GetTransponedCopy() => new MyMatrix(this.GetTransponedArray());
 
-        public void TransopnedMe()
-        {
-            this._matrix = GetTransponedArray();
-        }
+        public void TransopnedMe() => this._matrix = GetTransponedArray();
 
         override public String ToString()
         {

@@ -74,7 +74,7 @@ namespace Lab_1
             }
 
             Array.Sort(simpleArray);
-            int size = (int) Math.Sqrt(count);
+            int size = (int)Math.Sqrt(count);
             int[,] quadArray = new int[size, size]; //квадратна
             counter = 0;
             for (int i = 0; i < size; i++)

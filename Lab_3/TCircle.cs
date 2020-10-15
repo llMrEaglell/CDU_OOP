@@ -18,7 +18,7 @@ namespace Lab_3
         public TCircle(double radius) => this.Radius = radius;
         public TCircle(TCircle circle) => this.Radius = circle.Radius;
 
-        public double getLength() => 2 * Math.PI * Radius;
+        public double GetLength() => 2 * Math.PI * Radius;
 
         public double getSquare() => Math.PI * Math.Pow(Radius, 2);
 
