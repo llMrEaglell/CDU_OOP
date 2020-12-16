@@ -2,9 +2,9 @@
 {
     public interface IMyNumber<T> where T : IMyNumber<T>
     {
-        T Add(T obj);
-        T Substract(T obj);
-        T Multiply(T obj);
-        T Devide(T obj);
+        T Add(T that);
+        T Substract(T that);
+        T Multiply(T that);
+        T Devide(T that);
     }
 }
