@@ -6,10 +6,16 @@ namespace Lab_4
     public class Task1
     {
         private static readonly string DefaultPathDir = $@"{Directory.GetCurrentDirectory()}\files\";
-        public int Sum = 0;
-        private int counter = 0;
+        private int _sum;
+        private int _counter;
 
-        public void method()
+        public Task1()
+        {
+            _sum = 0;
+            _counter = 0;
+        }
+
+        public void Method()
         {
             try
             {
@@ -22,8 +28,8 @@ namespace Lab_4
                         {
                             int firstNumber = int.Parse(reader.ReadLine());
                             int secondNumber = int.Parse(reader.ReadLine());
-                            Sum += firstNumber * secondNumber;
-                            counter++;
+                            _sum += firstNumber * secondNumber;
+                            _counter++;
                         }
                     }
                     catch (FileNotFoundException)
@@ -43,7 +49,7 @@ namespace Lab_4
                         appendText(i, "overflow.txt", "so long number");
                     }
                 }
-                Console.WriteLine(Sum/counter);
+                Console.WriteLine(_sum/_counter);
             }
             catch (DivideByZeroException)
             {
@@ -59,19 +65,19 @@ namespace Lab_4
         {
             try
             {
-                using (StreamWriter sw = File.CreateText(DefaultPathDir + "no_file.txt"))
+                using (StreamWriter unused = File.CreateText(DefaultPathDir + "no_file.txt"))
                 {
                 }
 
-                using (StreamWriter sw = File.CreateText(DefaultPathDir + "bad_data.txt"))
+                using (StreamWriter unused = File.CreateText(DefaultPathDir + "bad_data.txt"))
                 {
                 }
 
-                using (StreamWriter sw = File.CreateText(DefaultPathDir + "overflow.txt"))
+                using (StreamWriter unused = File.CreateText(DefaultPathDir + "overflow.txt"))
                 {
                 }
             }
-            catch (UnauthorizedAccessException e)
+            catch (UnauthorizedAccessException)
             {
                 throw new Exception("Can't create file");
             }
