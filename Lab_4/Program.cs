@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Lab_4
 {
@@ -6,7 +7,8 @@ namespace Lab_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Task1 task1 = new Task1();
+            task1.method();
         }
     }
 }
