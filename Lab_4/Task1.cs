@@ -7,13 +7,7 @@ namespace Lab_4
     {
         private static readonly string DefaultPathDir = $@"{Directory.GetCurrentDirectory()}\files\";
         public int Sum = 0;
-        private readonly int _countFilesInDirectory;
         private int counter = 0;
-
-        public Task1()
-        {
-            _countFilesInDirectory = new DirectoryInfo(DefaultPathDir).GetFiles().Length;
-        }
 
         public void method()
         {
