@@ -6,7 +6,7 @@ namespace Lab_4
     public class Task1
     {
         private static readonly string DefaultPathDir = $@"{Directory.GetCurrentDirectory()}\files\";
-        private int _sum;
+        private long _sum;
         private int _counter;
 
         public Task1()
@@ -28,7 +28,8 @@ namespace Lab_4
                         {
                             int firstNumber = int.Parse(reader.ReadLine());
                             int secondNumber = int.Parse(reader.ReadLine());
-                            _sum += firstNumber * secondNumber;
+                            int product = firstNumber * secondNumber;
+                            _sum += product;
                             _counter++;
                         }
                     }
