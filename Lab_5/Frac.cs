@@ -7,13 +7,13 @@ namespace Lab5
         private BigInteger _nom;
         private BigInteger _denom;
 
-        public BigInteger Nom
+        public BigInteger nom
         {
             get => _nom;
             set => _nom = value;
         }
 
-        public BigInteger Denom
+        public BigInteger denom
         {
             get => _denom;
             set => _denom = value;
@@ -25,12 +25,10 @@ namespace Lab5
             _denom = denom;
         }
 
-        public Frac Add(Frac obj)
+        public Frac Add(Frac that)
         {
-            return new Frac(
-                BigInteger.Add(BigInteger.Multiply(this.Nom, obj.Denom),
-                    BigInteger.Multiply(this.Denom, obj.Nom)),
-                BigInteger.Multiply(this.Denom, obj.Nom));
+            return new Frac(this.nom * that.denom + that.nom * this.denom, this.denom * that.denom);
+
         }
 
         public Frac Substract(Frac obj)
@@ -46,6 +44,11 @@ namespace Lab5
         public Frac Devide(Frac obj)
         {
             throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"{nom}/{denom}";
         }
     }
 }
