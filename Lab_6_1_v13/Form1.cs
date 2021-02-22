@@ -16,5 +16,10 @@ namespace Lab_6_1_v13
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
