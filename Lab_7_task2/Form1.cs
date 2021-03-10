@@ -63,25 +63,30 @@ namespace Lab_2_New_Task2
                 "Повідомлення",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
 
-            if (checkBox1.Checked)
-            {
-                ChangeOpacity();
-            }
+        private static void helo()
+        {
+            MessageBox.Show(
+                "Hello World!",
+                "Повідомлення",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
 
-            if (checkBox2.Checked)
-            {
-                ChangeBGColor();
-            }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            button4.MouseClick += (sender1, eventArgs) => ChangeOpacity();
+        }
 
-            if (checkBox3.Checked)
-            {
-                MessageBox.Show(
-                    "Hello World!",
-                    "Повідомлення",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            button4.MouseClick += (o, args) => ChangeBGColor();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            button4.MouseClick += (o, args) => helo();
         }
     }
 }
