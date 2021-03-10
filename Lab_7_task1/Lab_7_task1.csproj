@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Lab_2_New</RootNamespace>
+        <RootNamespace>Lab_7_task1</RootNamespace>
     </PropertyGroup>
 
 </Project>

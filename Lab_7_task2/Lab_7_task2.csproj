@@ -4,7 +4,7 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net5.0-windows</TargetFramework>
         <UseWindowsForms>true</UseWindowsForms>
-        <RootNamespace>Lab_2_New_Task2</RootNamespace>
+        <RootNamespace>Lab_7_task2</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
