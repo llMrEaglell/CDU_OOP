@@ -76,12 +76,28 @@ namespace Lab_2_New_Task2
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            button4.MouseClick += (sender1, eventArgs) => ChangeOpacity();
+            if (checkBox1.Checked)
+                button4.MouseClick += mouseChangeOpacity();
+            else
+                button4.MouseClick -= mouseChangeOpacity();
+        }
+
+        private MouseEventHandler mouseChangeOpacity()
+        {
+            return (sender1, eventArgs) => ChangeOpacity();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            button4.MouseClick += (o, args) => ChangeBGColor();
+            if (checkBox2.Checked)
+                button4.MouseClick += mouseChangeBGColor();
+            else
+                button4.MouseClick -= mouseChangeBGColor();
+        }
+
+        private static MouseEventHandler mouseChangeBGColor()
+        {
+            return (o, args) => ChangeBGColor();
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
