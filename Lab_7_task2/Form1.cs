@@ -86,7 +86,15 @@ namespace Lab_2_New_Task2
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            button4.MouseClick += (o, args) => helo();
+            if (checkBox3.Checked)
+                button4.MouseClick += mouseHello();
+            else
+                button4.MouseClick -= mouseHello();
+        }
+
+        private static MouseEventHandler mouseHello()
+        {
+            return (o, args) => helo();
         }
     }
 }
