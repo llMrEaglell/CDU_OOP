@@ -72,26 +72,12 @@ namespace Lab_2_New_Task2
             
             if (checkBox1.Checked)
             {
-                if (Opacity != 1)
-                {
-                    Opacity = 1;
-                }
-                else
-                {
-                    Opacity = 0.25;
-                }
+                ChangeOpacity();
             }
             
             if (checkBox2.Checked)
             {
-                if (ActiveForm.BackColor == DefaultBackColor)
-                {
-                    ActiveForm.BackColor = Color.Chartreuse;
-                }
-                else
-                {
-                    ActiveForm.BackColor = DefaultBackColor;
-                }
+                ChangeBGColor();
             }
             
             if (checkBox3.Checked)
