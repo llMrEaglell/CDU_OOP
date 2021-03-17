@@ -12,7 +12,7 @@ namespace Lab7_1
         {
             RandomNumber,
             CurrentTime,
-            MouthDay
+            MonthDay
         };
 
         public void Start(int sec)
@@ -26,7 +26,7 @@ namespace Lab7_1
             }
         }
 
-        private static void MouthDay()
+        private static void MonthDay()
         {
             WriteLine("Mouth day: " + DateTime.Now.Day);
         }
