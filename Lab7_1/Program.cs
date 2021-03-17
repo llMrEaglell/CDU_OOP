@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 
-namespace Lab7_1
+namespace Lab7_2
 {
     class Program
     {
