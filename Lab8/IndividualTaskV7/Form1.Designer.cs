@@ -155,7 +155,6 @@
             this.MoveLeft.TabIndex = 7;
             this.MoveLeft.Text = "L";
             this.MoveLeft.UseVisualStyleBackColor = true;
-            this.MoveLeft.Click += new System.EventHandler(this.button6_Click);
             // 
             // DownSize
             // 
@@ -201,7 +200,6 @@
             this.CreateNewObjButton.TabIndex = 2;
             this.CreateNewObjButton.Text = "Create new Object";
             this.CreateNewObjButton.UseVisualStyleBackColor = true;
-            this.CreateNewObjButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -210,7 +208,6 @@
             this.label1.Size = new System.Drawing.Size(94, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "List of objects";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ListObj
             // 
