@@ -19,7 +19,7 @@ namespace IndividualTaskV7
 
         private Color Color { get; }
         public Color CurrentColor { get; set; }
-        private int Size { get; set; }
+        public int Size { get; set; }
         private int X { get; set; }
         private int Y { get; set; }
         private string Name { get; }
