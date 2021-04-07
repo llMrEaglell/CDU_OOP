@@ -60,23 +60,34 @@ namespace IndividualTaskV7
 
         public void MoveRight()
         {
-            X++;
+            if (X != 737 - Size)
+            {
+                X++;
+            }
         }
 
         public void MoveLeft()
         {
-            X--;
+            if (X != 0)
+            {
+                X--;
+            }
         }
 
         public void MoveUp()
         {
             if (Y != 0)
+            {
                 Y--;
+            }
         }
 
         public void MoveDown()
         {
-            Y++;
+            if (Y != 560 - Size)
+            {
+                Y++;
+            }
         }
 
         public void EndUp()
@@ -96,7 +107,7 @@ namespace IndividualTaskV7
 
         public void EndRight()
         {
-            X = 556 - Size;
+            X = 737 - Size;
         }
 
         public void Enlarge()
@@ -107,7 +118,9 @@ namespace IndividualTaskV7
         public void Reduce()
         {
             if (Size > 0)
+            {
                 Size--;
+            }
         }
 
         public void Hide()
