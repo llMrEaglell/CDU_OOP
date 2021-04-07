@@ -48,8 +48,8 @@ namespace IndividualTaskV7
         {
             count++;
             var randSize = r.Next(40, 200);
-            var rand = r.Next(0, 737 - randSize);
-            var rand2 = r.Next(0, 560 - randSize);
+            var rand = r.Next(0, 553 - randSize);
+            var rand2 = r.Next(0, 366 - randSize);
 
             var figure = new CEmblem(rand, rand2, randSize, "Figure " + count, Color.Red);
             figure.Show();
