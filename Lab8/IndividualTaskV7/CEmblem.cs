@@ -20,8 +20,8 @@ namespace IndividualTaskV7
         private Color Color { get; }
         public Color CurrentColor { get; set; }
         public int Size { get; set; }
-        private int X { get; set; }
-        private int Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         private string Name { get; }
 
         public override string ToString()
@@ -70,7 +70,8 @@ namespace IndividualTaskV7
 
         public void MoveUp()
         {
-            Y--;
+            if (Y != 0)
+                Y--;
         }
 
         public void MoveDown()
@@ -95,7 +96,7 @@ namespace IndividualTaskV7
 
         public void EndRight()
         {
-            X = 737 - Size;
+            X = 556 - Size;
         }
 
         public void Enlarge()
