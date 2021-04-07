@@ -35,7 +35,7 @@ namespace IndividualTaskV7
             {
                 var figure = (CEmblem) comboBox1.SelectedItem;
                 if (figure.CurrentColor == Color.White) return;
-
+                if (figure.Size > 0) DownSize.Enabled = true;
                 figure.Hide();
                 figure.Draw(pictureBox1);
                 figure.Enlarge();
@@ -83,14 +83,21 @@ namespace IndividualTaskV7
             {
                 var figure = (CEmblem) comboBox1.SelectedItem;
                 if (figure.CurrentColor == Color.White) return;
-
-                figure.Hide();
-                figure.Draw(pictureBox1);
-                figure.Reduce();
-                figure.Show();
-                figure.Draw(pictureBox1);
+                if (figure.Size > 0)
+                {
+                    figure.Hide();
+                    figure.Draw(pictureBox1);
+                    figure.Reduce();
+                    figure.Show();
+                    figure.Draw(pictureBox1);
+                }
+                else
+                {
+                    DownSize.Enabled = false;
+                }
             }
         }
+
 
         private void MoveTop_Click(object sender, EventArgs e)
         {
@@ -98,7 +105,6 @@ namespace IndividualTaskV7
             {
                 var figure = (CEmblem) comboBox1.SelectedItem;
                 if (figure.CurrentColor == Color.White) return;
-
                 figure.Hide();
                 figure.Draw(pictureBox1);
                 figure.MoveUp();
