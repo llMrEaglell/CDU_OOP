@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MoveDownMax = new System.Windows.Forms.Button();
             this.MoveTopMax = new System.Windows.Forms.Button();
             this.MoveRighMax = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.HideObjButton = new System.Windows.Forms.Button();
             this.CreateNewObjButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ListObj = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,6 +61,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.MoveDownMax);
             this.splitContainer1.Panel1.Controls.Add(this.MoveTopMax);
             this.splitContainer1.Panel1.Controls.Add(this.MoveRighMax);
@@ -75,14 +76,22 @@
             this.splitContainer1.Panel1.Controls.Add(this.HideObjButton);
             this.splitContainer1.Panel1.Controls.Add(this.CreateNewObjButton);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.ListObj);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 161;
+            this.splitContainer1.Size = new System.Drawing.Size(706, 378);
+            this.splitContainer1.SplitterDistance = 140;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 39);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(122, 21);
+            this.comboBox1.TabIndex = 15;
             // 
             // MoveDownMax
             // 
@@ -90,8 +99,9 @@
             this.MoveDownMax.Name = "MoveDownMax";
             this.MoveDownMax.Size = new System.Drawing.Size(112, 20);
             this.MoveDownMax.TabIndex = 14;
-            this.MoveDownMax.Text = "B";
+            this.MoveDownMax.Text = "↓↓";
             this.MoveDownMax.UseVisualStyleBackColor = true;
+            this.MoveDownMax.Click += new System.EventHandler(this.MoveDownMax_Click);
             // 
             // MoveTopMax
             // 
@@ -99,8 +109,9 @@
             this.MoveTopMax.Name = "MoveTopMax";
             this.MoveTopMax.Size = new System.Drawing.Size(112, 18);
             this.MoveTopMax.TabIndex = 13;
-            this.MoveTopMax.Text = "T";
+            this.MoveTopMax.Text = "↑↑";
             this.MoveTopMax.UseVisualStyleBackColor = true;
+            this.MoveTopMax.Click += new System.EventHandler(this.MoveTopMax_Click);
             // 
             // MoveRighMax
             // 
@@ -108,8 +119,9 @@
             this.MoveRighMax.Name = "MoveRighMax";
             this.MoveRighMax.Size = new System.Drawing.Size(14, 97);
             this.MoveRighMax.TabIndex = 12;
-            this.MoveRighMax.Text = "R";
+            this.MoveRighMax.Text = "→→";
             this.MoveRighMax.UseVisualStyleBackColor = true;
+            this.MoveRighMax.Click += new System.EventHandler(this.MoveRighMax_Click);
             // 
             // MoveLeftMax
             // 
@@ -117,8 +129,9 @@
             this.MoveLeftMax.Name = "MoveLeftMax";
             this.MoveLeftMax.Size = new System.Drawing.Size(14, 97);
             this.MoveLeftMax.TabIndex = 11;
-            this.MoveLeftMax.Text = "L";
+            this.MoveLeftMax.Text = "←←";
             this.MoveLeftMax.UseVisualStyleBackColor = true;
+            this.MoveLeftMax.Click += new System.EventHandler(this.MoveLeftMax_Click);
             // 
             // MoveDown
             // 
@@ -126,8 +139,9 @@
             this.MoveDown.Name = "MoveDown";
             this.MoveDown.Size = new System.Drawing.Size(71, 19);
             this.MoveDown.TabIndex = 10;
-            this.MoveDown.Text = "B";
+            this.MoveDown.Text = "↓";
             this.MoveDown.UseVisualStyleBackColor = true;
+            this.MoveDown.Click += new System.EventHandler(this.MoveDown_Click);
             // 
             // MoveTop
             // 
@@ -135,8 +149,9 @@
             this.MoveTop.Name = "MoveTop";
             this.MoveTop.Size = new System.Drawing.Size(71, 18);
             this.MoveTop.TabIndex = 9;
-            this.MoveTop.Text = "T";
+            this.MoveTop.Text = "↑";
             this.MoveTop.UseVisualStyleBackColor = true;
+            this.MoveTop.Click += new System.EventHandler(this.MoveTop_Click);
             // 
             // MoveRight
             // 
@@ -144,8 +159,9 @@
             this.MoveRight.Name = "MoveRight";
             this.MoveRight.Size = new System.Drawing.Size(14, 48);
             this.MoveRight.TabIndex = 8;
-            this.MoveRight.Text = "R";
+            this.MoveRight.Text = "→";
             this.MoveRight.UseVisualStyleBackColor = true;
+            this.MoveRight.Click += new System.EventHandler(this.MoveRight_Click);
             // 
             // MoveLeft
             // 
@@ -153,8 +169,9 @@
             this.MoveLeft.Name = "MoveLeft";
             this.MoveLeft.Size = new System.Drawing.Size(14, 48);
             this.MoveLeft.TabIndex = 7;
-            this.MoveLeft.Text = "L";
+            this.MoveLeft.Text = "←";
             this.MoveLeft.UseVisualStyleBackColor = true;
+            this.MoveLeft.Click += new System.EventHandler(this.MoveLeft_Click);
             // 
             // DownSize
             // 
@@ -164,6 +181,7 @@
             this.DownSize.TabIndex = 6;
             this.DownSize.Text = "-";
             this.DownSize.UseVisualStyleBackColor = true;
+            this.DownSize.Click += new System.EventHandler(this.DownSize_Click);
             // 
             // UpSize
             // 
@@ -173,6 +191,7 @@
             this.UpSize.TabIndex = 5;
             this.UpSize.Text = "+";
             this.UpSize.UseVisualStyleBackColor = true;
+            this.UpSize.Click += new System.EventHandler(this.UpSize_Click);
             // 
             // ShowObjButton
             // 
@@ -180,8 +199,9 @@
             this.ShowObjButton.Name = "ShowObjButton";
             this.ShowObjButton.Size = new System.Drawing.Size(124, 24);
             this.ShowObjButton.TabIndex = 4;
-            this.ShowObjButton.Text = "Show objcet";
+            this.ShowObjButton.Text = "Show object";
             this.ShowObjButton.UseVisualStyleBackColor = true;
+            this.ShowObjButton.Click += new System.EventHandler(this.ShowObjButton_Click);
             // 
             // HideObjButton
             // 
@@ -191,6 +211,7 @@
             this.HideObjButton.TabIndex = 3;
             this.HideObjButton.Text = "Hide object";
             this.HideObjButton.UseVisualStyleBackColor = true;
+            this.HideObjButton.Click += new System.EventHandler(this.HideObjButton_Click);
             // 
             // CreateNewObjButton
             // 
@@ -200,6 +221,7 @@
             this.CreateNewObjButton.TabIndex = 2;
             this.CreateNewObjButton.Text = "Create new Object";
             this.CreateNewObjButton.UseVisualStyleBackColor = true;
+            this.CreateNewObjButton.Click += new System.EventHandler(this.CreateNewObjButton_Click);
             // 
             // label1
             // 
@@ -209,19 +231,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "List of objects";
             // 
-            // ListObj
-            // 
-            this.ListObj.FormattingEnabled = true;
-            this.ListObj.Location = new System.Drawing.Point(12, 40);
-            this.ListObj.Name = "ListObj";
-            this.ListObj.Size = new System.Drawing.Size(121, 21);
-            this.ListObj.TabIndex = 0;
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(629, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(553, 366);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -229,10 +244,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(706, 378);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Individual Task Hubenko";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).EndInit();
@@ -240,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.ComboBox comboBox1;
 
         private System.Windows.Forms.Button MoveLeftMax;
         private System.Windows.Forms.Button MoveRighMax;
@@ -264,8 +281,6 @@
         private System.Windows.Forms.Button CreateNewObjButton;
 
         private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.ComboBox ListObj;
 
         private System.Windows.Forms.SplitContainer splitContainer1;
 
