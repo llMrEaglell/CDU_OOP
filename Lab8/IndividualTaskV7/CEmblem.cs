@@ -105,7 +105,8 @@ namespace IndividualTaskV7
 
         public void Reduce()
         {
-            Size--;
+            if (Size > 0)
+                Size--;
         }
 
         public void Hide()
