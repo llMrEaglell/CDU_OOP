@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace IndividualTaskV7
@@ -131,6 +132,18 @@ namespace IndividualTaskV7
         public void Show()
         {
             CurrentColor = Color;
+        }
+
+        public void Rotate(PictureBox pictureBox)
+        {
+            using (var g = Graphics.FromImage(pictureBox.Image))
+            {
+                Image image = pictureBox.Image;
+                image.RotateFlip(RotateFlipType.Rotate270FlipX);
+                
+                g.RotateTransform(45, MatrixOrder.Append);
+                pictureBox.Refresh();
+            }
         }
     }
 }

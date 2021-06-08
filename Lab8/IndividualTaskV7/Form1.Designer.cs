@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.rotate = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MoveDownMax = new System.Windows.Forms.Button();
             this.MoveTopMax = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.rotate);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.MoveDownMax);
             this.splitContainer1.Panel1.Controls.Add(this.MoveTopMax);
@@ -83,6 +85,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(931, 455);
             this.splitContainer1.SplitterDistance = 184;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // rotate
+            // 
+            this.rotate.Location = new System.Drawing.Point(37, 176);
+            this.rotate.Name = "rotate";
+            this.rotate.Size = new System.Drawing.Size(75, 23);
+            this.rotate.TabIndex = 16;
+            this.rotate.Text = "Rotate";
+            this.rotate.UseVisualStyleBackColor = true;
+            this.rotate.Click += new System.EventHandler(this.rotate_Click);
             // 
             // comboBox1
             // 
@@ -256,6 +268,8 @@
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button rotate;
 
         private System.Windows.Forms.ComboBox comboBox1;
 

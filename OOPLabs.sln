@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdiApplication", "Lab8\MdiA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndividualTaskV7", "Lab8\IndividualTaskV7\IndividualTaskV7.csproj", "{3C4316FD-7F9C-4F2E-8B9B-932C37AAFCC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab9", "Lab9\Lab9.csproj", "{317F8445-7593-4B30-8A96-9FDF05072353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab10", "Lab10\Lab10.csproj", "{0608D6BB-1F88-45E0-A585-0E76D465A79B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +157,14 @@ Global
 		{3C4316FD-7F9C-4F2E-8B9B-932C37AAFCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C4316FD-7F9C-4F2E-8B9B-932C37AAFCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C4316FD-7F9C-4F2E-8B9B-932C37AAFCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317F8445-7593-4B30-8A96-9FDF05072353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317F8445-7593-4B30-8A96-9FDF05072353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317F8445-7593-4B30-8A96-9FDF05072353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317F8445-7593-4B30-8A96-9FDF05072353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0608D6BB-1F88-45E0-A585-0E76D465A79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0608D6BB-1F88-45E0-A585-0E76D465A79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0608D6BB-1F88-45E0-A585-0E76D465A79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0608D6BB-1F88-45E0-A585-0E76D465A79B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

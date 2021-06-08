@@ -280,5 +280,14 @@ namespace IndividualTaskV7
             MoveRight.Enabled = true;
             MoveRighMax.Enabled = true;
         }
+
+        private void rotate_Click(object sender, EventArgs e)
+        {
+            if (isSelected())
+            {
+                var cEmblem = (CEmblem) comboBox1.SelectedItem;
+                cEmblem.Rotate(pictureBox1);
+            }
+        }
     }
 }
